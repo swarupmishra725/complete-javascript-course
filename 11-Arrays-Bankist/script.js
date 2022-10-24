@@ -78,14 +78,34 @@ const displayMovements = function(movements){
   });
 };
 
+
+
 displayMovements(account1.movements);
+
+const createUsernames = function(accs){
+    accs.forEach(function (acc) {
+      acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+}
+
+createUsernames(accounts);
+
+const calcDisplayBalance = function(movements){
+  const balance = movements.reduce((acc, mov) => acc + mov , 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
 
 //console.log(containerMovements.innerHTML);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-/* 
+
 
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -94,7 +114,7 @@ const currencies = new Map([
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
- */
+ 
 
 /////////////////////////////////////////////////
 /* 
@@ -249,7 +269,7 @@ const checkDogs = function(dogsJulia,dogsKate){
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]); 
 
-*/
+
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eurToUsd = 1.1;
@@ -268,59 +288,48 @@ for(const mov of movements) movementsUSDfor.push(mov * eurToUsd)
 
 console.log(movementsUSDfor);
 
-const movementsDescriptions = movements.map((mov, i, arr) => {
+ const movementsDescriptions = movements.map((mov, i, arr) => {
     if (mov > 0) {
       return `Movement ${i + 1} : You diposited ${mov}`;
     } else {
       return `Movement ${i + 1} : You withdraew ${Math.abs(mov)}`;
     }
-});
+}); 
 
-/* 
-//11/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+const movementsDescriptions = movements.map((mov, i) =>
+ `Movement ${i + 1} : You  ${mov > 0 ? 'diposited' : 'withdrew'} ${Math.abs(mov)}`);
 
-//12/10/2023
-console.log(movementsDescriptions);
 console.log(movementsDescriptions);
 
-//13/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
 
-//14/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
 
-//15/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+const deposits = movements.filter(function(mov){
+  return mov > 0;
+})
 
-//16/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
- */
-//17/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+console.log(movements);
+console.log(deposits);
 
-//18/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+const depositsFor = [];
+for( const mov of movements) if (mov > 0) depositsFor.push(mov);
 
-//20/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+console.log(depositsFor);
 
-//21/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+const withdrawls  = movements.filter(mov => mov < 0)
+console.log(withdrawls);
+*/
 
-//22/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+console.log(movements);
 
-//23/10/2023
-console.log(movementsDescriptions);
-console.log(movementsDescriptions);
+//accumulator -> snowball
+const balance = movements.reduce(function(acc, cur, i, arr){
+  console.log(`Iteration ${i}: ${acc}`);
+  return acc + cur;
+},0)
+
+//const balance = movements.reduce((acc, cur) => acc + cur);
+console.log(balance);
+
+let balance2 = 0;
+for(const mov of movements) balance2+= mov;
+console.log(balance2);

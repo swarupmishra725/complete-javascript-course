@@ -87,3 +87,24 @@ function fruitProcessor(apples, oranges) {
   return juice;
 }
 console.log(fruitProcessor(2, 3));
+
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");

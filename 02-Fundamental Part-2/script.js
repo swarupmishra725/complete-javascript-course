@@ -18,7 +18,7 @@ if (hasDriversLicense) console.log('I can drive :D');
 function logger() {
   console.log('My name is Jonas');
 }
-
+//Hello
 // calling / running / invoking function
 logger();
 logger();

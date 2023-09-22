@@ -1,5 +1,5 @@
 'use strict';
-/* 
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -50,9 +50,32 @@ const restaurant = {
 
 }; 
 
+const ordersSet = new Set(['Pasta','Pizza','Pizza','Risoto','Pasta','Pizza']);
+
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size);
+
+console.log(ordersSet.has('Pizza'));
+
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+
+console.log(ordersSet);
+
+ordersSet.delete('Risoto');
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+//////////////////////////////////////////////////////////////////////////////////////
+ /*
+
 const properties = Object.keys(openingHours);
 console.log(properties);
-/* 
+
 console.log(`We are open on ${properties.length} days`);
 
 for(const day of Object.keys(openingHours)){
@@ -419,7 +442,7 @@ team1 > team2 && console.log('Team 2 is more likely to win');
 */
 
 
-const game = {
+/* const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
   players: [
@@ -470,7 +493,7 @@ const allplayers = [...players1,...players2];
 const players1Final = [...players1,'Thiago','Coutinho','Perisic'];
 //5
 const { odds: { team1, x: draw, team2 }} = game;
-console.log(team1,draw,team2 );
+//console.log(team1,draw,team2 );
 //6
   const printGoals= function(...players){
     console.log(...players);
@@ -480,14 +503,14 @@ console.log(team1,draw,team2 );
   printGoals(...game.scored);
 
   //7
-team1 < team2 && console.log('Team1 is more likely to win');
-team1 > team2 && console.log('Team2 is more likely to win'); 
+// team1 < team2 && console.log('Team1 is more likely to win');
+// team1 > team2 && console.log('Team2 is more likely to win'); 
 
 
 ///////////////////////////////////////
 // Coding Challenge #2
 
-/* 
+
 Let's continue with our football betting app!
 
 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
@@ -506,8 +529,22 @@ BONUS: Create an object called 'scorers' which contains the names of the players
       }
 
 GOOD LUCK 😀
-*/
+
 
 //1
-for(const goal of game)
-console.log();
+for (const [i,goal] of game.scored.entries()) console.log(`Goal ${i+1} ${goal}`);
+2//
+const odds = Object.values(game.odds)
+let average = 0;
+for(const odd of Object.values(game.odds))
+      average += odd;
+average /= odds.length;
+console.log(average);
+3///
+for (const [team,odd] of Object.entries(game.odds)){
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+};
+ */
+
+

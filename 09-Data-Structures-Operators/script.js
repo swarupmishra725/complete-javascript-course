@@ -3,24 +3,22 @@
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
- 
- const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-  const  openingHours =  {
-    [weekDays[3]]: {
-      open: 12,
-      close: 22,
-    },
-    [weekDays[4]]: {
-      open: 11,
-      close: 23,
-    },
-    [weekDays[5]]: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  };
 
-  
+const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekDays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekDays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekDays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -35,21 +33,41 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({starterIndex = 1, mainIndex = 0, time = '20:00', address}) {
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
     console.log(
       `Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
-  orderPasta: function(ing1,ing2,ing3){
-    console.log(`Here is your delicious pasta with ${ing1},${ing2} and ${ing3}`);
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1},${ing2} and ${ing3}`
+    );
   },
-  orderPizza(mainIngridient, ...otherIngredients){
+  orderPizza(mainIngridient, ...otherIngredients) {
     console.log(mainIngridient);
     console.log(otherIngredients);
   },
+};
+/////////////////////////////////////////////////////////
+//MAPS
+const rest = new Map();
+rest.set('name', 'Classio Italiano');
+rest.set(1, 'Fireneze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
 
-}; 
+rest
+  .set('categories', ['Italoian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('Open', 11)
+  .set('Close', '23');
 
+/////////////////////////////////////////////
+//Sets
+/* 
 const ordersSet = new Set(['Pasta','Pizza','Pizza','Risoto','Pasta','Pizza']);
 
 console.log(ordersSet);
@@ -70,8 +88,18 @@ ordersSet.delete('Risoto');
 console.log(ordersSet);
 
 for (const order of ordersSet) console.log(order);
+
+//Example
+
+const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size);
+console.log(new Set('swarupmishra').size);
+ */
 //////////////////////////////////////////////////////////////////////////////////////
- /*
+/*
 
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -381,7 +409,6 @@ console.log(i,j,k);
 const [p = 1, q = 2, r =  3] = [8,9];
 console.log(p, q, r); */
 
-
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -440,7 +467,6 @@ team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
 
 */
-
 
 /* const game = {
   team1: 'Bayern Munich',
@@ -546,5 +572,3 @@ for (const [team,odd] of Object.entries(game.odds)){
   console.log(`Odd of ${teamStr} ${odd}`);
 };
  */
-
-

@@ -65,6 +65,11 @@ rest
   .set('Open', 11)
   .set('Close', '23');
 
+
+  rest
+    .set('categories', ['Italoian', 'Pizzeria', 'Vegetarian', 'Organic'])
+    .set('Open', 11)
+    .set('Close', '23');
 /////////////////////////////////////////////
 //Sets
 /* 

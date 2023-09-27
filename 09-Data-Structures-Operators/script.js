@@ -52,7 +52,146 @@ const restaurant = {
     console.log(mainIngridient);
     console.log(otherIngredients);
   },
-}; */
+}; 
+
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+ 
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+ 
+console.log(airline.slice(4));
+console.log(airline.slice(4,7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ')+1));
+console.log(airline.slice(-5));
+
+const flights = 
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const cheeckMiddleSeat = function(seat){
+  //B and E are the middle seats
+  const s = seat.slice(-1);
+  if( s === 'B' || s === 'E') console.log('You got the middle seat');
+  else console.log('You are Lucky');
+};
+cheeckMiddleSeat('11B');
+cheeckMiddleSeat('19C');
+cheeckMiddleSeat('22A');
+cheeckMiddleSeat('27D');
+cheeckMiddleSeat('29E');
+
+console.log(new String('Jonas'));
+console.log(typeof new String('Jonas'));
+
+console.log(typeof new String('Jonas').slice(1)); 
+*/
+
+/* 
+const airline = 'TAP Air Portugal';
+
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+//Fix Capitalization in name
+const passanger = 'jOnAS';
+const passangerLower = passanger.toLowerCase();
+const passangerCorrect = passangerLower[0]+passangerLower.slice(1);
+
+console.log(passangerLower,passangerCorrect);
+
+//Compairing Email
+
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@Jonas.Io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimedEmail = lowerEmail.trim();
+
+//console.log(trimedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(email === normalizedEmail);
+
+//Replacing 
+const priceGB = '288,97#';
+const priceUS = priceGB.replace('#', '$').replace(',','.');
+console.log(priceUS);
+
+const announcement = 'All passanger come to the boarding door 23. Boarding door 23!';
+//console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replaceAll(/door/g, 'gate'));
+
+//Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+
+if(plane.startsWith('Airbus') && plane.endsWith('neo')){
+  console.log('Parts of the new Airbus Family');
+}
+
+//Practice Exercise
+
+const checkBaggage = function(items){
+  const baggsge = items.toLowerCase();
+  if(baggsge.includes('knief') || (baggsge.includes('gun'))) {console.log('You are not allowed');}
+  else {console.log('Welcome onboard');}
+};
+checkBaggage('I have a Laptop, some food, and a pocket knief');
+checkBaggage('I have clocth, watch and food');
+checkBaggage('I ahave snacks, cloth, a gun'); 
+*/
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Swarup Mishra'.split(' '));
+
+const [firstName, LastName] = 'Swarup Mishra'.split(' ');
+
+const newName = ['Mr. ',firstName, LastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function(name){
+  const names = name.split(' ');
+  const namesUpper = [];
+  for(const n of names){
+    //namesUpper.push(n[0].toUpperCase()+n.slice(1));
+    namesUpper.push(n.replace(n[0],n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+}
+capitalizeName('jessica ann smith davis');
+capitalizeName('swarup mishra');
+
+//Padding
+const mesage = 'Go to the gate 21!';
+console.log(mesage.padStart(25, '+').padEnd(35, '+'));
+console.log('Swarup'.padStart(25, '+').padEnd(35, '+'));
+
+
+const maskCreditCard = function(number){
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+}
+
+console.log(maskCreditCard(4596845789246813));
+console.log(maskCreditCard(4596845789245169));
 
 /////////////////////////////////////////////////////////
 /* 
@@ -644,7 +783,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
 
 GOOD LUCK 😀
 */
-
+/* 
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -679,3 +818,4 @@ for(const [min, event] of gameEvents){
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
+ */

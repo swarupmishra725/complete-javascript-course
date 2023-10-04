@@ -194,4 +194,11 @@ console.log(addVAT(100));
 //     }
 // }
 
+const addTax1 = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
 
+const addVAT2 = addTax1(0.23);
+console.log(addVAT2(100));

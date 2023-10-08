@@ -236,7 +236,7 @@ BONUS TEST DATA 1: [5, 2, 3]
 BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
-*/
+
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -256,8 +256,11 @@ const poll = {
   },
   displayResults(type = 'array'){
     if(type === 'array'){
-        console.log(this);
+        console.log(this.answers);
+    }else if(type === 'string'){
+      console.log(`Poll results are ${this.answers.join(',')}`);
     }
+  },
 };
 
 
@@ -265,4 +268,35 @@ const poll = {
 
 document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll));
 
-document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll)); 
+poll.displayResults.call({answers: [5, 3, 2]},'string');
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
+
+*/
+
+/*
+
+const runOnece = function(){
+  console.log('This function will never run again');
+}
+runOnece();
+
+
+//IIFE
+(function(){
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+//console.log(isPrivate);
+
+(() => console.log('This array functon will never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 25;
+}
+//console.log(isPrivate);
+console.log(notPrivate); 
+
+*/
+

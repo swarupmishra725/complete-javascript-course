@@ -267,3 +267,14 @@ const movementsUSDfor = [];
 for(const mov of movements) movementsUSDfor.push(mov * eurToUsd)
 
 console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map((mov, i, arr) => {
+    if (mov > 0) {
+      return `Movement ${i + 1} : You diposited ${mov}`;
+    } else {
+      return `Movement ${i + 1} : You withdraew ${Math.abs(mov)}`;
+    }
+});
+
+console.log(movementsDescriptions);
+

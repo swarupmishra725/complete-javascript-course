@@ -276,5 +276,11 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
     }
 });
 
+
+//11/10/2023
+console.log(movementsDescriptions);
+console.log(movementsDescriptions);
+
+//12/10/2023
 console.log(movementsDescriptions);
 console.log(movementsDescriptions);

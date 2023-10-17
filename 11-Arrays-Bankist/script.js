@@ -276,7 +276,7 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
     }
 });
 
-
+/* 
 //11/10/2023
 console.log(movementsDescriptions);
 console.log(movementsDescriptions);
@@ -298,5 +298,9 @@ console.log(movementsDescriptions);
 console.log(movementsDescriptions);
 
 //16/10/2023
+console.log(movementsDescriptions);
+console.log(movementsDescriptions);
+ */
+//17/10/2023
 console.log(movementsDescriptions);
 console.log(movementsDescriptions);

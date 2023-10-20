@@ -309,6 +309,6 @@ console.log(movementsDescriptions);
 console.log(movementsDescriptions);
 console.log(movementsDescriptions);
 
-//19/10/2023
+//20/10/2023
 console.log(movementsDescriptions);
 console.log(movementsDescriptions);

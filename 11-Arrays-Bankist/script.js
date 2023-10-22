@@ -316,3 +316,7 @@ console.log(movementsDescriptions);
 //21/10/2023
 console.log(movementsDescriptions);
 console.log(movementsDescriptions);
+
+//22/10/2023
+console.log(movementsDescriptions);
+console.log(movementsDescriptions);

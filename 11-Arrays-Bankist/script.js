@@ -277,4 +277,4 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
 });
 
 console.log(movementsDescriptions);
-
+console.log(movementsDescriptions);

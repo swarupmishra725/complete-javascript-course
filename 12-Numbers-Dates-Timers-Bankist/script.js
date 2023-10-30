@@ -543,3 +543,5 @@ console.log('India: ', new Intl.NumberFormat('en-IN', options).format(num)); */
 
 setTimeout(() => console.log("Here is your pizza 🍕"),3000);
 console.log('Waiting ...');
+
+console.log('Waiting ...');
